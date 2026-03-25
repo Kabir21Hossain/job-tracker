@@ -15,14 +15,359 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
     <style>
         * {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Geist', sans-serif;
         }
     </style>
 </head>
 
-<body>
+<body class="pt-[60px]">
+
+    <section class="max-w-7xl mx-auto w-full  space-y-5  border-b border-gray-300 pb-7.5 px-4 md:px-0">
+        <h1 class="text-xl text-center  text-[#002C5C] font-bold md:text-3xl md:text-left">Job Application Tracker</h1>
+
+        <div class="all flex justify-between gap-4">
+            <div class="total-display text-center md:text-left bg-white p-5 rounded-md shadow-xl w-full space-y-2 ">
+                <h4 class="text-[14px] font-medium text-[#323B49]">Total</h4>
+                <h2 class=" text-2xl font-bold" id="total-value">0</h2>
+            </div>
+
+            <div class="interview-display text-center md:text-left bg-white p-5 rounded-md shadow-xl w-full space-y-2">
+                <h4 class="text-[14px] font-medium text-[#323B49]">Interview</h4>
+                <h2 class=" text-2xl font-bold text-green-600" id="interview-value">0</h2>
+            </div>
+
+
+            <div class="rejected-display text-center md:text-left bg-white p-5 rounded-md shadow-xl w-full space-y-2">
+                <h4 class="text-[14px] font-medium text-[#323B49]">Rejected</h4>
+                <h2 class=" text-2xl font-bold text-red-600" id="rejected-value">0</h2>
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+    <section class="main mt-7.5 max-w-7xl mx-auto w-full">
+        <div class="top flex justify-between mb-[24px]">
+            <h3 class="text-[20px] text-[#002C5C] font-bold">Available Jobs</h3>
+            <p class="text-[16px] text-[#323B49] font-medium">0 jobs</p>
+        </div>
+
+        <div class="btns space-x-3 mb-[16px]">
+            <button class="btn btn-soft bg-blue-500 text-white text-center px-4 py-2" id="all-btn">All</button>
+            <button class="btn  btn-soft text-center" id="interview-btn">Interview</button>
+            <button class="btn  btn-soft text-center" id="rejected-btn">Rejected</button>
+        </div>
+
+        <div class="jobs-container space-y-[16px]" id="jobs-container">
+
+            <!-- 1st job -->
+
+            <div class="card w-full bg-base-100 card-md shadow-xl">
+                <div class="card-body space-y-5 border-0 px-6 pt-6 pb-[52px]">
+
+                    <div class="flex justify-between items-center">
+                        <div class="left-part">
+                            <h2 class="card-title text-[#002C5C] text-xl">Mobile First Corp</h2>
+                            <p class="text-[#323B49] font-medium">React Native Developer</p>
+                        </div>
+
+                        <div class="right w-14 h-14 rounded-md bg-[#F4F4F5] flex items-center justify-center  hover:text-red-500 hover:bg-red-100 hover:translate-y-0.25">
+                            <i class="fa-solid fa-trash-can cursor-pointer "
+                                id="remove"></i>
+                        </div>
+
+                    </div>
+
+                    <p class="text-[#64748B] text-sm">Remote • Full-time • $130,000 - $175,000</p>
+
+                    <div class="space-y-2">
+                        <div class="card-actions">
+                            <button class="btn  btn-soft btn-primary uppercase hidden"></button>
+                        </div>
+                        <p class="text-[#323B49] text-sm">Build cross-platform mobile applications using React Native. Work on products used by
+                            millions of users worldwide.</p>
+                    </div>
+
+                    <div class="btns space-x-3">
+                        <button class="btn btn-outline btn-success font-bold uppercase">Interview</button>
+                        <button class="btn btn-outline btn-error font-bold uppercase">Rejected</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 2nd job -->
+            <div class="card w-full bg-base-100 card-md shadow-xl">
+                <div class="card-body space-y-5 border-0 px-6 pt-6 pb-[52px]">
+                    <div class="flex justify-between items-center">
+                        <div class="left-part">
+                            <h2 class="card-title text-[#002C5C] text-xl">CloudSync Technologies</h2>
+                            <p class="text-[#323B49] font-medium">Backend Engineer</p>
+                        </div>
+                        <div class="right w-14 h-14 rounded-md bg-[#F4F4F5] flex items-center justify-center hover:text-red-500 hover:bg-red-100 hover:translate-y-0.25">
+                            <i class="fa-solid fa-trash-can cursor-pointer" id="remove"></i>
+                        </div>
+                    </div>
+                    <p class="text-[#64748B] text-sm">On-site • Full-time • $120,000 - $160,000</p>
+                    <div class="space-y-2">
+                        <div class="card-actions">
+                            <button class="btn btn-soft btn-primary uppercase hidden"></button>
+                        </div>
+                        <p class="text-[#323B49] text-sm">Design and maintain scalable backend services using Node.js and PostgreSQL. Optimize API performance for high-traffic systems.</p>
+                    </div>
+                    <div class="btns space-x-3">
+                        <button class="btn btn-outline btn-success font-bold uppercase">Interview</button>
+                        <button class="btn btn-outline btn-error font-bold uppercase">Rejected</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3rd job -->
+            <div class="card w-full bg-base-100 card-md shadow-xl">
+                <div class="card-body space-y-5 border-0 px-6 pt-6 pb-[52px]">
+                    <div class="flex justify-between items-center">
+                        <div class="left-part">
+                            <h2 class="card-title text-[#002C5C] text-xl">PixelCraft Studios</h2>
+                            <p class="text-[#323B49] font-medium">UI/UX Designer</p>
+                        </div>
+                        <div class="right w-14 h-14 rounded-md bg-[#F4F4F5] flex items-center justify-center hover:text-red-500 hover:bg-red-100 hover:translate-y-0.25">
+                            <i class="fa-solid fa-trash-can cursor-pointer" id="remove"></i>
+                        </div>
+                    </div>
+                    <p class="text-[#64748B] text-sm">Remote • Full-time • $95,000 - $130,000</p>
+                    <div class="space-y-2">
+                        <div class="card-actions">
+                            <button class="btn btn-soft btn-primary uppercase hidden"></button>
+                        </div>
+                        <p class="text-[#323B49] text-sm">Create intuitive and visually stunning interfaces for web and mobile apps. Collaborate with product teams to deliver seamless user experiences.</p>
+                    </div>
+                    <div class="btns space-x-3">
+                        <button class="btn btn-outline btn-success font-bold uppercase">Interview</button>
+                        <button class="btn btn-outline btn-error font-bold uppercase">Rejected</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4th job -->
+            <div class="card w-full bg-base-100 card-md shadow-xl">
+                <div class="card-body space-y-5 border-0 px-6 pt-6 pb-[52px]">
+                    <div class="flex justify-between items-center">
+                        <div class="left-part">
+                            <h2 class="card-title text-[#002C5C] text-xl">DataVault Inc.</h2>
+                            <p class="text-[#323B49] font-medium">Data Scientist</p>
+                        </div>
+                        <div class="right w-14 h-14 rounded-md bg-[#F4F4F5] flex items-center justify-center hover:text-red-500 hover:bg-red-100 hover:translate-y-0.25">
+                            <i class="fa-solid fa-trash-can cursor-pointer" id="remove"></i>
+                        </div>
+                    </div>
+                    <p class="text-[#64748B] text-sm">Hybrid • Full-time • $140,000 - $190,000</p>
+                    <div class="space-y-2">
+                        <div class="card-actions">
+                            <button class="btn btn-soft btn-primary uppercase hidden"></button>
+                        </div>
+                        <p class="text-[#323B49] text-sm">Analyze large datasets to extract actionable insights using Python and machine learning models. Drive data-driven decision making across the organization.</p>
+                    </div>
+                    <div class="btns space-x-3">
+                        <button class="btn btn-outline btn-success font-bold uppercase">Interview</button>
+                        <button class="btn btn-outline btn-error font-bold uppercase">Rejected</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5th job -->
+            <div class="card w-full bg-base-100 card-md shadow-xl">
+                <div class="card-body space-y-5 border-0 px-6 pt-6 pb-[52px]">
+                    <div class="flex justify-between items-center">
+                        <div class="left-part">
+                            <h2 class="card-title text-[#002C5C] text-xl">SecureNet Solutions</h2>
+                            <p class="text-[#323B49] font-medium">Cybersecurity Analyst</p>
+                        </div>
+                        <div class="right w-14 h-14 rounded-md bg-[#F4F4F5] flex items-center justify-center hover:text-red-500 hover:bg-red-100 hover:translate-y-0.25">
+                            <i class="fa-solid fa-trash-can cursor-pointer" id="remove"></i>
+                        </div>
+                    </div>
+                    <p class="text-[#64748B] text-sm">Remote • Full-time • $110,000 - $155,000</p>
+                    <div class="space-y-2">
+                        <div class="card-actions">
+                            <button class="btn btn-soft btn-primary uppercase hidden"></button>
+                        </div>
+                        <p class="text-[#323B49] text-sm">Monitor and protect enterprise systems from cyber threats. Conduct vulnerability assessments and implement security protocols.</p>
+                    </div>
+                    <div class="btns space-x-3">
+                        <button class="btn btn-outline btn-success font-bold uppercase">Interview</button>
+                        <button class="btn btn-outline btn-error font-bold uppercase">Rejected</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6th job -->
+            <div class="card w-full bg-base-100 card-md shadow-xl">
+                <div class="card-body space-y-5 border-0 px-6 pt-6 pb-[52px]">
+                    <div class="flex justify-between items-center">
+                        <div class="left-part">
+                            <h2 class="card-title text-[#002C5C] text-xl">GreenLeaf Digital</h2>
+                            <p class="text-[#323B49] font-medium">Frontend Developer</p>
+                        </div>
+                        <div class="right w-14 h-14 rounded-md bg-[#F4F4F5] flex items-center justify-center hover:text-red-500 hover:bg-red-100 hover:translate-y-0.25">
+                            <i class="fa-solid fa-trash-can cursor-pointer" id="remove"></i>
+                        </div>
+                    </div>
+                    <p class="text-[#64748B] text-sm">On-site • Full-time • $100,000 - $140,000</p>
+                    <div class="space-y-2">
+                        <div class="card-actions">
+                            <button class="btn btn-soft btn-primary uppercase hidden"></button>
+                        </div>
+                        <p class="text-[#323B49] text-sm">Build responsive and accessible web interfaces using React and TypeScript. Collaborate closely with designers to implement pixel-perfect UI components.</p>
+                    </div>
+                    <div class="btns space-x-3">
+                        <button class="btn btn-outline btn-success font-bold uppercase">Interview</button>
+                        <button class="btn btn-outline btn-error font-bold uppercase">Rejected</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7th job -->
+            <div class="card w-full bg-base-100 card-md shadow-xl">
+                <div class="card-body space-y-5 border-0 px-6 pt-6 pb-[52px]">
+                    <div class="flex justify-between items-center">
+                        <div class="left-part">
+                            <h2 class="card-title text-[#002C5C] text-xl">NovaSoft Labs</h2>
+                            <p class="text-[#323B49] font-medium">DevOps Engineer</p>
+                        </div>
+                        <div class="right w-14 h-14 rounded-md bg-[#F4F4F5] flex items-center justify-center hover:text-red-500 hover:bg-red-100 hover:translate-y-0.25">
+                            <i class="fa-solid fa-trash-can cursor-pointer" id="remove"></i>
+                        </div>
+                    </div>
+                    <p class="text-[#64748B] text-sm">Remote • Full-time • $125,000 - $170,000</p>
+                    <div class="space-y-2">
+                        <div class="card-actions">
+                            <button class="btn btn-soft btn-primary uppercase hidden"></button>
+                        </div>
+                        <p class="text-[#323B49] text-sm">Automate CI/CD pipelines and manage cloud infrastructure on AWS. Ensure high availability and reliability of production systems.</p>
+                    </div>
+                    <div class="btns space-x-3">
+                        <button class="btn btn-outline btn-success font-bold uppercase">Interview</button>
+                        <button class="btn btn-outline btn-error font-bold uppercase">Rejected</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8th job -->
+            <div class="card w-full bg-base-100 card-md shadow-xl">
+                <div class="card-body space-y-5 border-0 px-6 pt-6 pb-[52px]">
+                    <div class="flex justify-between items-center">
+                        <div class="left-part">
+                            <h2 class="card-title text-[#002C5C] text-xl">Quantum AI Research</h2>
+                            <p class="text-[#323B49] font-medium">Machine Learning Engineer</p>
+                        </div>
+                        <div class="right w-14 h-14 rounded-md bg-[#F4F4F5] flex items-center justify-center hover:text-red-500 hover:bg-red-100 hover:translate-y-0.25">
+                            <i class="fa-solid fa-trash-can cursor-pointer" id="remove"></i>
+                        </div>
+                    </div>
+                    <p class="text-[#64748B] text-sm">Hybrid • Full-time • $150,000 - $200,000</p>
+                    <div class="space-y-2">
+                        <div class="card-actions">
+                            <button class="btn btn-soft btn-primary uppercase hidden"></button>
+                        </div>
+                        <p class="text-[#323B49] text-sm">Develop and deploy machine learning models for natural language processing and computer vision. Research cutting-edge AI techniques.</p>
+                    </div>
+                    <div class="btns space-x-3">
+                        <button class="btn btn-outline btn-success font-bold uppercase">Interview</button>
+                        <button class="btn btn-outline btn-error font-bold uppercase">Rejected</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9th job -->
+            <div class="card w-full bg-base-100 card-md shadow-xl">
+                <div class="card-body space-y-5 border-0 px-6 pt-6 pb-[52px]">
+                    <div class="flex justify-between items-center">
+                        <div class="left-part">
+                            <h2 class="card-title text-[#002C5C] text-xl">SwiftCommerce</h2>
+                            <p class="text-[#323B49] font-medium">Full Stack Developer</p>
+                        </div>
+                        <div class="right w-14 h-14 rounded-md bg-[#F4F4F5] flex items-center justify-center hover:text-red-500 hover:bg-red-100 hover:translate-y-0.25">
+                            <i class="fa-solid fa-trash-can cursor-pointer" id="remove"></i>
+                        </div>
+                    </div>
+                    <p class="text-[#64748B] text-sm">On-site • Full-time • $115,000 - $150,000</p>
+                    <div class="space-y-2">
+                        <div class="card-actions">
+                            <button class="btn btn-soft btn-primary uppercase hidden"></button>
+                        </div>
+                        <p class="text-[#323B49] text-sm">Develop end-to-end e-commerce features using Next.js and MongoDB. Build scalable payment integrations and real-time inventory systems.</p>
+                    </div>
+                    <div class="btns space-x-3">
+                        <button class="btn btn-outline btn-success font-bold uppercase">Interview</button>
+                        <button class="btn btn-outline btn-error font-bold uppercase">Rejected</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10th job -->
+            <div class="card w-full bg-base-100 card-md shadow-xl">
+                <div class="card-body space-y-5 border-0 px-6 pt-6 pb-[52px]">
+                    <div class="flex justify-between items-center">
+                        <div class="left-part">
+                            <h2 class="card-title text-[#002C5C] text-xl">HealthTech Pro</h2>
+                            <p class="text-[#323B49] font-medium">Software Engineer</p>
+                        </div>
+                        <div class="right w-14 h-14 rounded-md bg-[#F4F4F5] flex items-center justify-center hover:text-red-500 hover:bg-red-100 hover:translate-y-0.25">
+                            <i class="fa-solid fa-trash-can cursor-pointer" id="remove"></i>
+                        </div>
+                    </div>
+                    <p class="text-[#64748B] text-sm">Remote • Contract • $90,000 - $120,000</p>
+                    <div class="space-y-2">
+                        <div class="card-actions">
+                            <button class="btn btn-soft btn-primary uppercase hidden"></button>
+                        </div>
+                        <p class="text-[#323B49] text-sm">Build HIPAA-compliant healthcare platforms using Java and Spring Boot. Integrate with EHR systems and ensure patient data security.</p>
+                    </div>
+                    <div class="btns space-x-3">
+                        <button class="btn btn-outline btn-success font-bold uppercase">Interview</button>
+                        <button class="btn btn-outline btn-error font-bold uppercase">Rejected</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11th job -->
+            <div class="card w-full bg-base-100 card-md shadow-xl">
+                <div class="card-body space-y-5 border-0 px-6 pt-6 pb-[52px]">
+                    <div class="flex justify-between items-center">
+                        <div class="left-part">
+                            <h2 class="card-title text-[#002C5C] text-xl">FinEdge Analytics</h2>
+                            <p class="text-[#323B49] font-medium">Cloud Architect</p>
+                        </div>
+                        <div class="right w-14 h-14 rounded-md bg-[#F4F4F5] flex items-center justify-center hover:text-red-500 hover:bg-red-100 hover:translate-y-0.25">
+                            <i class="fa-solid fa-trash-can cursor-pointer" id="remove"></i>
+                        </div>
+                    </div>
+                    <p class="text-[#64748B] text-sm">Hybrid • Full-time • $160,000 - $210,000</p>
+                    <div class="space-y-2">
+                        <div class="card-actions">
+                            <button class="btn btn-soft btn-primary uppercase hidden"></button>
+                        </div>
+                        <p class="text-[#323B49] text-sm">Design multi-cloud architectures for fintech applications. Lead migration strategies and implement cost-optimized infrastructure solutions.</p>
+                    </div>
+                    <div class="btns space-x-3">
+                        <button class="btn btn-outline btn-success font-bold uppercase">Interview</button>
+                        <button class="btn btn-outline btn-error font-bold uppercase">Rejected</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
 
 </body>
 
